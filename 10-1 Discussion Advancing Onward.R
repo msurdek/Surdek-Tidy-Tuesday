@@ -12,11 +12,9 @@ income_mean <- readr::read_csv('https://raw.githubusercontent.com/rfordatascienc
 
 #Load packages
 library(tidyverse)
-install.packages("scales")
 
 #Data
 colnames(income_time)[2] <- "Percentile"
-income_time$income_family <- dollar_format(prefix = "$", suffix = "", largest_with_cents = 1, ..., big.mark = ",", negative_parens = FALSE)
 
 #Viz
 plot <- ggplot(income_time, aes(x = year, y = income_family)) +
